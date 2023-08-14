@@ -8,14 +8,15 @@ class GenratePassword {
     let spr = '!@#$%^&*()'
 
       if (len< 3) {
-        console.log('Password can be atleat 3 digits')
+        alert('Password can be atleat 3 digits')
+        return none
       }
       else{
-        i=0
+       let i=0
         while(i<len) {
             this.pass +=apha[Math.round(Math.random()*apha.length)]
-            this.pass +=num[Math.round(Math.random()*apha.length)]
-            this.pass +=spr[Math.round(Math.random()*apha.length)]
+            this.pass +=num[Math.round(Math.random()*num.length)]
+            this.pass +=spr[Math.round(Math.random()*spr.length)]
             i+=3
         }
         this.pass = this.pass.substring(0,len)
@@ -26,4 +27,15 @@ class GenratePassword {
 
 let h1 = new GenratePassword()
 
-console.log(h1.GetPass(8))
+
+
+
+ip.value = ''
+
+
+cick.addEventListener('click',() =>{
+  let val = ip.value
+  val = Number.parseInt(val)
+  wrt.innerHTML = `<b>${h1.GetPass(val)}<b/>`
+  ip.value = ''
+})
